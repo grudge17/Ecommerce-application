@@ -6,6 +6,7 @@ const bodyParser=require('body-parser')
 const cookieParser=require('cookie-parser')
 const uuidv1=require('uuidv1')
 const expressValidator=require('express-validator')
+const cors=require('cors')
 
 //import routes
 const authRoutes=require('./routes/auth')
@@ -33,6 +34,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.json()) 
 app.use(cookieParser())
 app.use(expressValidator())
+app.use(cors())
 
 //  routes middleware
 app.use("/api",authRoutes)
